@@ -1,192 +1,129 @@
 body {
-    font-family: "Poppins", sans-serif;
-    background-color: #f9f9f9;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
     margin: 0;
+    padding: 0;
 }
 
 .container {
-    background-color: white;
-    padding: 50px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     text-align: center;
-    width: 520px;
     position: relative;
 }
 
 h1 {
-    margin: 0;
-    font-size: 24px;
     color: #333;
-}
-
-p {
-    margin: 5px 0 20px;
-    color: #666;
+    margin-bottom: 20px;
 }
 
 .converter {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
 }
 
-.currency {
-    flex: 1;
-    text-align: left;
+.input-group {
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.currency label {
-    display: block;
+.input-group label {
+    font-size: 14px;
+    color: #555;
     margin-bottom: 5px;
-    font-weight: bold;
-    color: #333;
 }
 
-.currency select,
-.currency input {
-    width: 100%;
-    padding: 10px 15px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 25px;
-    font-size: 16px;
-    color: #333;
-    box-sizing: border-box;
-}
-
-.currency select {
-    background-color: #f1f1f1;
-}
-
-.currency input {
-    background-color: #ffffff;
-}
-
-.swap {
-    padding: 0 20px;
-    position: relative;
-}
-
-#swap-button {
-    background: none;
-    border: none;
-    cursor: pointer;
-    color: #fff;
-    background-color: green;
-    border-radius: 50%;
+.input-group select,
+.input-group input {
     padding: 10px;
-    position: relative;
-    z-index: 1;
-}
-
-#swap-button::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(45deg, rgba(0, 255, 0, 0.5), rgba(0, 0, 255, 0.5));
-    border-radius: 50%;
-    transform: translate(-50%, -50%) scale(1.3);
-    z-index: -1;
-    filter: blur(10px);
-}
-
-.swap-icon {
-    width: 24px;
-    height: 24px;
-    fill: #fff;
-}
-
-.convert-button-container {
-    margin-top: 6px;
-    margin-right: 10px;
-    text-align: center;
-}
-
-#convert-button {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 25px;
-    background-color: #007bff;
-    color: white;
+    border-radius: 20px;
+    width: 150px;
     font-size: 16px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.input-group select {
+    border: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    appearance: none;
+    background-color: #fff;
+}
+
+#amount,
+#converted-amount-input {
+    width: 150px;
+    border: 1px solid #ddd;
+}
+
+#reverse {
+    background-color: transparent;
+    padding: 0;
+    border: none;
     cursor: pointer;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    font-size: 20px;
+    margin: 0 20px;
+}
+
+#convert {
+    background-color: #536d91;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 16px;
     transition: background-color 0.3s ease;
-}
-
-#convert-button:hover {
-    background-color: #0056b3;
-}
-
-.chart {
     margin-top: 20px;
 }
 
-.chart svg {
-    background-color: #f1f1f1;
-    border-radius: 4px;
-    position: relative;
+#convert:hover {
+    background-color: #465a76;
 }
 
-.chart polyline {
-    stroke: #007bff;
-    fill: none;
-    stroke-width: 1;
-}
-
-.timeframes {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 10px;
-    color: #666;
-    font-size: 15px;
-}
-
-.timeframes span {
-    flex: 1;
+.graph-container {
     text-align: center;
-    cursor: pointer;
+    margin-top: 30px;
 }
 
-.horizontal-line {
+#graph {
     width: 100%;
-    height: 1px;
-    background-color: #ccc;
-    margin: 10px 0;
+    max-width: 600px; /* Increased max-width */
+    height: 300px; /* Increased height */
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin: 0 auto;
 }
 
-.calculator-icon {
+.calculator-btn {
     position: absolute;
-    top: 10px;
-    right: 10px;
+    top: 20px;
+    right: 20px;
+    background-color: transparent;
+    padding: 0;
+    border: none;
     cursor: pointer;
-}
-
-.calculator-icon svg {
-    width: 24px;
-    height: 24px;
-    fill: #666;
+    font-size: 16px;
 }
 
 .modal {
     display: none;
     position: fixed;
-    z-index: 1000;
+    z-index: 1;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
 }
 
 .modal-content {
@@ -195,8 +132,7 @@ p {
     padding: 20px;
     border: 1px solid #888;
     width: 300px;
-    border-radius: 10px;
-    text-align: center;
+    border-radius: 8px;
 }
 
 .close {
@@ -213,61 +149,37 @@ p {
     cursor: pointer;
 }
 
-.calculator {
+#calculator {
+    text-align: center;
+}
+
+#calc-display {
+    width: 100%;
+    height: 40px;
+    margin-bottom: 10px;
+    font-size: 18px;
+    text-align: right;
+    padding: 5px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+}
+
+.calc-buttons {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
 }
 
-.calculator input {
-    grid-column: span 4;
-    padding: 15px;
+.calc-btn {
+    padding: 20px;
     font-size: 18px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    text-align: right;
-}
-
-.calculator button {
-    padding: 15px;
-    font-size: 18px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    border: none;
+    border-radius: 4px;
+    background-color: #536d91;
+    color: white;
     cursor: pointer;
 }
 
-.number {
-    background-color: green;
-    color: #fff;
-}
-
-.number:hover {
-    background-color: rgb(10, 74, 10);
-}
-
-.operator {
-    background-color: orange;
-    color: #fff;
-}
-
-.operator:hover {
-    background-color: rgb(89, 60, 7);
-}
-
-.clear {
-    background-color: red;
-    color: #fff;
-}
-
-.clear:hover {
-    background-color: rgb(95, 6, 6);
-}
-
-.delete {
-    background-color: blue;
-    color: #fff;
-}
-
-.delete:hover {
-    background-color: rgb(4, 4, 73);
+.calc-btn:hover {
+    background-color: #465a76;
 }

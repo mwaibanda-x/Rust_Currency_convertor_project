@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!--for the graph link-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Converter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Currency Converter</h1>
+        <button class="calculator-btn">
+            <img src="C:\Users\Natasha\OneDrive\Documents\Third year\CSC 3301 Programming Languages\PROGRAMMING LANGUAGE PARADIGMS\ASSIGNMENTS\Project\Project Rust\Calc-01.png"
+             alt="Calculator" width="50" height="50">
+
+             <!--make sure you use the exact path for the png files-->
+        </button>
+        <div class="converter">
+            <div class="input-group">
+                <label for="from">From:</label>
+                <select name="from" id="from">
+                    <option value="USD">USD (US Dollar)</option>
+                    <option value="EUR">EUR (Euro)</option>
+                    <option value="GBP">GBP (British Pound)</option>
+                </select>
+                <input type="number" id="amount" placeholder="Enter Amount">
+            </div>
+            <button id="reverse">
+                <img src="C:\Users\Natasha\OneDrive\Documents\Third year\CSC 3301 Programming Languages\PROGRAMMING LANGUAGE PARADIGMS\ASSIGNMENTS\Project\Project Rust\Reverse-01.png"
+                 alt="Reverse" width="45" height="45">
+            </button>
+            <div class="input-group">
+                <label for="to">To:</label>
+                <select name="to" id="to">
+                    <option value="USD">USD (US Dollar)</option>
+                    <option value="EUR">EUR (Euro)</option>
+                    <option value="GBP">GBP (British Pound)</option>
+                </select>
+                <input type="text" id="converted-amount-input" disabled placeholder="Converted Amount">
+            </div>
+        </div>
+        <button id="convert">Convert</button>
+        <div class="graph-container">
+            <canvas id="graph"></canvas>
+        </div>
+
+        <div id="calculator-modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <div id="calculator">
+                    <!-- This is for a calc, You have to use WASM -->
+                    <input type="text" id="calc-display" disabled>
+                    <!-- Calculator Buttons -->
+                    <div class="calc-buttons">
+                        <button class="calc-btn">7</button>
+                        <button class="calc-btn">8</button>
+                        <button class="calc-btn">9</button>
+                        <button class="calc-btn">/</button>
+                        <button class="calc-btn">4</button>
+                        <button class="calc-btn">5</button>
+                        <button class="calc-btn">6</button>
+                        <button class="calc-btn">*</button>
+                        <button class="calc-btn">1</button>
+                        <button class="calc-btn">2</button>
+                        <button class="calc-btn">3</button>
+                        <button class="calc-btn">-</button>
+                        <button class="calc-btn">0</button>
+                        <button class="calc-btn">.</button>
+                        <button class="calc-btn">=</button>
+                        <button class="calc-btn">+</button>
+                        <button class="calc-btn">C</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script src="script.js"></script> <!-- Here is where to link the js file -->
+</body>
+</html>
