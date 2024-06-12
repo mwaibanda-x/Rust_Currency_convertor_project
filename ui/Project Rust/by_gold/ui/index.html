@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Currency Converter</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Currency Converter</h1>
+    <div class="content">
+      <div class="converter">
+        <div class="input-section">
+          <label for="amount">Amount</label>
+          <input type="number" id="amount" placeholder="Enter amount">
+        </div>
+        <div class="currency-section">
+          <label for="from-currency">From</label>
+          <select id="from-currency"></select>
+          <label for="to-currency">To</label>
+          <select id="to-currency"></select>
+        </div>
+        <div id="result" class="result"></div>
+        <div class="chart-container">
+          <canvas id="rate-chart"></canvas>
+        </div>
+      </div>
+      <div class="calculator" id="calculator">
+        <h2>Calculator</h2>
+        <div id="calc-output" class="calc-output">0</div>
+        <div class="calc-buttons">
+          <button class="calc-btn" data-value="7">7</button>
+          <button class="calc-btn" data-value="8">8</button>
+          <button class="calc-btn" data-value="9">9</button>
+          <button class="calc-btn" data-value="/">/</button>
+          <button class="calc-btn" data-value="4">4</button>
+          <button class="calc-btn" data-value="5">5</button>
+          <button class="calc-btn" data-value="6">6</button>
+          <button class="calc-btn" data-value="*">*</button>
+          <button class="calc-btn" data-value="1">1</button>
+          <button class="calc-btn" data-value="2">2</button>
+          <button class="calc-btn" data-value="3">3</button>
+          <button class="calc-btn" data-value="-">-</button>
+          <button class="calc-btn" data-value="0">0</button>
+          <button class="calc-btn" data-value=".">.</button>
+          <button class="calc-btn" data-value="C">C</button>
+          <button class="calc-btn" data-value="+">+</button>
+          <button class="calc-btn" data-value="=">=</button>
+        </div>
+      </div>
+    </div>
+    <button id="toggle-calculator-btn">Toggle Calculator</button>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
+

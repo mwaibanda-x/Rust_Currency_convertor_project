@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Converter</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Currency Converter</h1>
+        <div class="converter">
+            <div class="currency">
+                <label for="from-currency">From</label>
+                <select id="from-currency"></select>
+                <input type="number" id="from-amount" placeholder="Enter Amount">
+            </div>
+            <div class="swap">
+                <button id="swap-button">
+                    <svg class="swap-icon" viewBox="0 0 24 24">
+                        <path d="M5 14h6v2H5v2l-3-3 3-3v2zm14-4h-6V8h6V6l3 3-3 3v-2z"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="currency">
+                <label for="to-currency">To</label>
+                <select id="to-currency"></select>
+                <input type="number" id="to-amount" placeholder="Converted Amount" readonly>
+            </div>
+        </div>
+        <div class="convert-button-container">
+            <button id="convert-button">Convert</button>
+        </div>
+
+    <div id="calculator-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="close-modal">&times;</span>
+            <div class="calculator">
+                <input type="text" id="calc-display" disabled>
+                <button class="calc-button number" data-value="7">7</button>
+                <button class="calc-button number" data-value="8">8</button>
+                <button class="calc-button number" data-value="9">9</button>
+                <button class="calc-button operator" data-value="÷">÷</button>
+                <button class="calc-button number" data-value="4">4</button>
+                <button class="calc-button number" data-value="5">5</button>
+                <button class="calc-button number" data-value="6">6</button>
+                <button class="calc-button operator" data-value="×">×</button>
+                <button class="calc-button number" data-value="1">1</button>
+                <button class="calc-button number" data-value="2">2</button>
+                <button class="calc-button number" data-value="3">3</button>
+                <button class="calc-button operator" data-value="-">-</button>
+                <button class="calc-button number" data-value="0">0</button>
+                <button class="calc-button number" data-value=".">.</button>
+                <button class="calc-button clear" data-value="C">AC</button>
+                <button class="calc-button operator" data-value="+">+</button>
+                <button class="calc-button delete" data-value="D">Del</button>
+                <button class="calc-button operator" data-value="=">=</button>
+            </div>
+        </div>
+    </div>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
